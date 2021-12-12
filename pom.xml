@@ -6,7 +6,14 @@
 
     <groupId>pl.uj.se</groupId>
     <artifactId>project-management</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>monolith</module>
+        <module>domain</module>
+        <module>app</module>
+        <module>adapters</module>
+    </modules>
 
 
 </project>
