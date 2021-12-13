@@ -1,20 +1,6 @@
 package pl.github.se.project;
 
 class Project {
-    static Project create(final int id, final String name, final String description, final int daysToDeadline) {
-        return new Project(id, name, description, daysToDeadline);
-    }
-
-    Project(final int id, final String name, final String description, final int daysToDeadline) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.daysToDeadline = daysToDeadline;
-    }
-
-    Project() {
-    }
-
     private int id;
     private String name;
     private String description;
