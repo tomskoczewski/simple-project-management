@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class HelloWorldControllerTest {
+class ProjectControllerTest {
 
     @Test
-    void getHelloWorld() {
+    void tryDummyAssertions() {
         assertEquals(1,1);
     }
 }
