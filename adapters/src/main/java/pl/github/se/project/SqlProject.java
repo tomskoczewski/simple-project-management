@@ -12,7 +12,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 class SqlProject {
 
     static SqlProject fromProject(Project source) {
-        SqlProject result = new SqlProject();
+        var result = new SqlProject();
 
         result.id = source.getId();
         result.name = source.getName();
@@ -36,7 +36,7 @@ class SqlProject {
     }
 
     Project toProject() {
-        Project result = new Project();
+        var result = new Project();
 
         result.setId(id);
         result.setName(name);
