@@ -16,7 +16,7 @@ class HelloWorldController {
 
     @GetMapping
     String getHelloWorld() {
-        return "Hello world";
+        return "Hello world from Pipeline";
     }
 
 }
