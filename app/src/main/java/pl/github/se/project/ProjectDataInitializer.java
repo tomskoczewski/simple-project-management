@@ -11,7 +11,7 @@ class ProjectDataInitializer {
 
     void init() {
         if (projectQueryRepository.count() == 0) {
-            var project = new Project();
+            Project project = new Project();
             project.setName("First project");
             project.setDescription("Test description");
             project.setDaysToDeadline(3);
