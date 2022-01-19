@@ -4,7 +4,7 @@ import pl.github.se.project.dto.ProjectDto;
 
 class ProjectFactory {
     Project from(ProjectDto source) {
-        Project result = new Project();
+        var result = new Project();
 
         result.setId(source.getId());
         result.setName(source.getName());
