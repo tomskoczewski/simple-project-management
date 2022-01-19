@@ -1,2 +1,1 @@
-web: mvn clean package
-web: mvn -f monolith/pom.xml spring-boot:run
+web: java -jar monolith/target/monolith-1.0-SNAPSHOT.jar
