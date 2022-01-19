@@ -1,1 +1,1 @@
-web: java -jar monolith/target/monolith-1.0-SNAPSHOT.jar
+web: java -jar monolith/target/monolith-1.0-SNAPSHOT.jar -p $PORT
