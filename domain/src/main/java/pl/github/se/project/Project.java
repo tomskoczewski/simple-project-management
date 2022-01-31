@@ -1,10 +1,18 @@
 package pl.github.se.project;
 
+
+import pl.github.se.task.Task;
+
+import java.util.List;
+
 class Project {
     private int id;
     private String name;
     private String description;
     private int daysToDeadline;
+    private List<Task> tasks;
+
+
 
     public int getId() {
         return id;
@@ -37,5 +45,9 @@ class Project {
     void setDaysToDeadline(final int daysToDeadline) {
         this.daysToDeadline = daysToDeadline;
     }
+
+    public List<Task> getTasks() {return tasks;}
+
+    public void setTasks(List<Task> tasks) {this.tasks = tasks;}
 
 }

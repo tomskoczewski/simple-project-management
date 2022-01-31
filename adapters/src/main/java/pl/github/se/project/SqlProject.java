@@ -1,15 +1,19 @@
 package pl.github.se.project;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import pl.github.se.task.SqlTask;
+import pl.github.se.task.Task;
+
+import javax.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "SE_PROJECTS")
-class SqlProject {
+public class SqlProject {
 
     static SqlProject fromProject(Project source) {
         var result = new SqlProject();
@@ -18,6 +22,7 @@ class SqlProject {
         result.name = source.getName();
         result.description = source.getDescription();
         result.daysToDeadline = source.getDaysToDeadline();
+        result.tasks = source.getTasks().stream().map(SqlTask::fromTask).collect(Collectors.toList());
 
         return result;
     }
@@ -32,6 +37,9 @@ class SqlProject {
 
     private int daysToDeadline;
 
+    @OneToMany(mappedBy = "project")
+    private List<SqlTask> tasks = new ArrayList<>();
+
     public SqlProject() {
     }
 
@@ -42,6 +50,7 @@ class SqlProject {
         result.setName(name);
         result.setDescription(description);
         result.setDaysToDeadline(daysToDeadline);
+        result.setTasks(tasks.stream().map(SqlTask::toTask).collect(Collectors.toList()));
 
 
         return result;
