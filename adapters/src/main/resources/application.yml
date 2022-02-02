@@ -9,3 +9,7 @@ spring:
   h2:
       console.enabled: true
       console.path: /h2-console
+
+jwt:
+  secret: 'myPersonalTokEn9z3255CFHMcQfTjfoo09barWnZ123r4u788x1AcDdsGKaNdRgUkXp2softwareEngineering'
+  validity: 3600
