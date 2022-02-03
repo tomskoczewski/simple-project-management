@@ -73,7 +73,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- security -->
+<!-- security -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -95,7 +95,7 @@
             <version>0.11.1</version>
             <scope>runtime</scope>
         </dependency>
-        <!-- auth -->
+<!-- auth -->
 
     </dependencies>
     <build>
@@ -110,30 +110,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>com.iluwatar.urm</groupId>
-                <artifactId>urm-maven-plugin</artifactId>
-                <version>2.0.0</version>
-                <configuration>
-                    <!-- if outputDirectory is not set explicitly it will default to your build dir -->
-                    <outputDirectory>${project.basedir}/etc</outputDirectory>
-                    <packages>
-                        <param>pl.github.se.project</param>
-                    </packages>
-                    <includeMainDirectory>true</includeMainDirectory>
-                    <presenter>graphviz</presenter>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>process-classes</phase>
-                        <goals>
-                            <goal>map</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
 
     </build>
 </project>
