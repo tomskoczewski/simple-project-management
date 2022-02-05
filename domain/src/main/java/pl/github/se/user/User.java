@@ -3,7 +3,7 @@ package pl.github.se.user;
 
 public class User {
     private int id;
-    private String user;
+    private String username;
     private String password;
     private String mail;
     private String description;
@@ -26,12 +26,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

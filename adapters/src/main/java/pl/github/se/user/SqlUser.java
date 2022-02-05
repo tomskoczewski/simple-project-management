@@ -12,7 +12,7 @@ public class SqlUser {
         var result = new SqlUser();
 
         result.id = source.getId();
-        result.user = source.getUser();
+        result.username = source.getUsername();
         result.password = source.getPassword();
         result.mail = source.getMail();
         result.description = source.getDescription();
@@ -24,7 +24,7 @@ public class SqlUser {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private int id;
-    private String user;
+    private String username;
     private String password;
     private String mail;
     private String description;
@@ -38,7 +38,7 @@ public class SqlUser {
         var result = new User();
 
         result.setId(id);
-        result.setUser(user);
+        result.setUsername(username);
         result.setPassword(password);
         result.setMail(mail);
         result.setDescription(description);

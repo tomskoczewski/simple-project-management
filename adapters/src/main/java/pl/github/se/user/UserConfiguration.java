@@ -7,11 +7,12 @@ import org.springframework.context.annotation.Configuration;
 class UserConfiguration {
     @Bean
     UserFacade userFacade(
-            UserRepository repository
+            UserRepository repository, SqlUserQueryRepository userQueryRepository
     ) {
-        return new UserFacade(
+        return new UserFacadeImpl(
                 repository,
-                new UserFactory()
+                userQueryRepository
+                , new UserFactory()
         );
     }
 }

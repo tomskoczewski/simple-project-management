@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.Set;
 
 public interface UserQueryRepository {
-    Optional<UserDto> findDtoById(Integer id);
+    Optional<UserDto> findDtoById(int id);
 
     <T> Set<T> findBy(Class<T> clazz);
 
