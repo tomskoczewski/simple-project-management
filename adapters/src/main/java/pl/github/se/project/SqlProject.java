@@ -2,6 +2,7 @@ package pl.github.se.project;
 
 import pl.github.se.task.SqlTask;
 import pl.github.se.task.Task;
+import pl.github.se.team.SqlTeam;
 
 import javax.persistence.*;
 
@@ -23,6 +24,7 @@ public class SqlProject {
         result.description = source.getDescription();
         result.daysToDeadline = source.getDaysToDeadline();
         result.tasks = source.getTasks().stream().map(SqlTask::fromTask).collect(Collectors.toList());
+        result.team = SqlTeam.fromTeam(source.getTeam());
 
         return result;
     }
@@ -40,6 +42,10 @@ public class SqlProject {
     @OneToMany(mappedBy = "project")
     private List<SqlTask> tasks = new ArrayList<>();
 
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private SqlTeam team;
+
     public SqlProject() {
     }
 
@@ -51,7 +57,7 @@ public class SqlProject {
         result.setDescription(description);
         result.setDaysToDeadline(daysToDeadline);
         result.setTasks(tasks.stream().map(SqlTask::toTask).collect(Collectors.toList()));
-
+        result.setTeam(team.toTeam());
 
         return result;
     }
